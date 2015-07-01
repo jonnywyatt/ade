@@ -1,0 +1,16 @@
+.idea/
+.bin/
+logs/
+.DS_Store
+*.log
+workspace.xml
+node_modules
+*.iml
+manifest.json
+coverage
+doc
+.*.sw?
+src/app/public
+src/public
+dist
+npm-debug.log.*
