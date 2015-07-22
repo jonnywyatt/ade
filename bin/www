@@ -6,7 +6,7 @@ require('babel/register');
  * Module dependencies.
  */
 
-var app = require('../app');
+var app = require('../app/init');
 var debug = require('debug')('ade:server');
 var http = require('http');
 

@@ -4,8 +4,9 @@ var favicon = require('serve-favicon');
 var logger = require('morgan');
 var cookieParser = require('cookie-parser');
 var bodyParser = require('body-parser');
+var pg = require('pg');
 
-import isoAltMiddleware from './app/middleware/IsoAltMiddleware';
+import isoAltMiddleware from './middleware/IsoAltMiddleware';
 
 var app = express();
 
@@ -19,7 +20,23 @@ app.use(logger('dev'));
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(cookieParser());
-app.use(express.static(path.join(__dirname, 'public')));
+app.use(express.static(path.join(__dirname, '../public')));
+
+app.get('/db', function (request, response) {
+
+  var client = new pg.Client('postgres://ktjbujsggxbzxf:8_txx5IL_lDaxHAFwZGTLpsqWu@ec2-54-204-26-8.compute-1.amazonaws.com:5432/d7m567n31qgtoq?ssl=true');
+
+  client.connect( function(err) {
+    client.query('SELECT * FROM test_table', function(err, result) {
+      done();
+      if (err)
+      { console.error(err); response.send("Error " + err); }
+      else
+      {
+        response.render('index', {results: result.rows} ); }
+    });
+  });
+});
 
 app.use('/', isoAltMiddleware);
 

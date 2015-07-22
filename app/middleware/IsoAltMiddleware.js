@@ -1,5 +1,5 @@
 import Alt from '../alt';
-import NewsFeed from '../ui/components/NewsFeed';
+import Component from '../ui/components/Component/Component';
 import _ from 'lodash';
 
 export default (req, res) => {
@@ -11,7 +11,7 @@ export default (req, res) => {
     }
   }));
 
-  alt.render(NewsFeed).then((content) => {
+  alt.render(Component).then((content) => {
     res.render('index', {app: content});
   });
 };
