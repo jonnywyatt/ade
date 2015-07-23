@@ -56,7 +56,6 @@ button:focus {
 
 /* Sidebar */
 .sidebar {
-  text-align: center;
   background: #f5f5f5;
   z-index: 1000;
   position: fixed;
@@ -71,13 +70,21 @@ button:focus {
 
 .sidebar h1 {
   margin: 0.75em 0 0;
-  font-size: 2em;
+  font-size: 1.5em;
+  font-weight: 100;
   line-height: 1;
   font-family: "Playfair Display", serif;
+  padding-left: 3.2em;
+  position: relative;
+  text-align: left;
 }
 
 .sidebar h1 span {
   display: block;
+  position: absolute;
+  top: -0.08em;
+  font-size: 2.5em;
+  left: 0;
 }
 
 /* Codrops links */
@@ -158,12 +165,13 @@ button:focus {
 }
 
 .related h3 {
+  font-weight: 300;
   margin: 3em 0 0.5em 0;
   font-size: 0.95em;
+  text-transform: uppercase;
 }
 
 .related a {
-  display: block;
   color: inherit;
 }
 
@@ -174,7 +182,6 @@ button:focus {
 
 /* Main content */
 .main {
-  background-color: #CACFD3;
   position: relative;
   z-index: 50;
 }
@@ -182,6 +189,7 @@ button:focus {
 /* Grid container */
 .grid {
   position: relative;
+  background-color: rgba(68, 255, 10, 0.24);
 }
 
 /* Overlay */
@@ -217,8 +225,11 @@ button:focus {
 }
 
 .top-bar__headline {
-  margin: 0;
-  font-size: 0.75em;
+  margin: 0 auto;
+  font-size: 1em;
+  text-align: center;
+  text-transform: uppercase;
+  font-family: "Playfair Display", serif;
 }
 
 /* Menu button for toggling the sidebar (appears on small screen) */
@@ -297,7 +308,7 @@ button:focus {
 /* Grid item */
 .grid__item {
   padding: 45px 55px 30px;
-  margin: 1%;
+  margin: 1.5%;
   position: relative;
   color: inherit;
   background: #fff;
@@ -465,6 +476,8 @@ button:focus {
   display: block;
   border-radius: 50%;
   margin: 2em auto;
+  width: 100%;
+  height: auto;
 }
 
 .meta--preview .meta__avatar {
@@ -873,7 +886,7 @@ button:focus {
 
   /* 2 columns */
   .grid__item {
-    width: 48%;
+    width: 47%;
     border: none;
   }
 
@@ -899,25 +912,25 @@ button:focus {
 @media screen and (min-width: 1200px) {
   /* 3 columns */
   .grid__item {
-    width: 31.333%;
+    width: 30.333%;
   }
 }
 @media screen and (min-width: 1500px) {
   /* 4 columns */
   .grid__item {
-    width: 23%;
+    width: 22%;
   }
 }
 @media screen and (min-width: 1800px) {
   /* 5 columns */
   .grid__item {
-    width: 18%;
+    width: 17%;
   }
 }
 @media screen and (min-width: 2100px) {
   /* 6 columns */
   .grid__item {
-    width: 14.66%;
+    width: 13.66%;
   }
 }
 /* small screen changes for sidebar (it becomes an off-canvas menu) */
